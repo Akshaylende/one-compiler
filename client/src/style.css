@@ -1,0 +1,170 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    overflow: hidden; /* Prevent full page scroll */
+}
+
+/* Main Container */
+.ide-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* --- Header Styling --- */
+.ide-header {
+    height: 60px;
+    background-color: #252526;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #61dafb; /* React Blue */
+    letter-spacing: 1px;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Styled Dropdown */
+.lang-select {
+    background-color: #3c3c3c;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 8px 12px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.lang-select:hover {
+    border-color: #888;
+}
+
+/* Styled Run Button */
+.run-btn {
+    background-color: #0e639c; /* VS Code Blue */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.run-btn:hover {
+    background-color: #1177bb;
+}
+
+.run-btn:disabled {
+    background-color: #4a4a4a;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- Main Body Layout --- */
+.ide-body {
+    display: flex;
+    flex: 1; /* Takes remaining height */
+    height: calc(100vh - 60px); 
+}
+
+/* Left Panel: Editor */
+.editor-section {
+    flex: 2; /* 66% width approx */
+    border-right: 1px solid #333;
+    overflow: hidden;
+}
+
+/* Right Panel: I/O */
+.io-section {
+    flex: 1; /* 33% width approx */
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+}
+
+/* Shared IO Box Styles */
+.io-box {
+    flex: 1; /* Splits vertical space 50/50 */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.input-box {
+    border-bottom: 1px solid #333;
+}
+
+.io-label {
+    background-color: #252526;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    color: #cccccc;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Textarea and Pre styling */
+textarea, .output-area {
+    flex: 1;
+    width: 100%;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    border: none;
+    padding: 15px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.95rem;
+    resize: none; /* Disable manual resize */
+    outline: none;
+    overflow: auto;
+    margin: 0;
+}
+
+textarea:focus {
+    background-color: #222;
+}
+
+.output-area {
+    white-space: pre-wrap; /* Preserve formatting */
+}
+
+/* Status Badge */
+.status-badge {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #fff;
+}
+.status-badge.success { background-color: #28a745; }
+.status-badge.error { background-color: #dc3545; }
+.status-badge.running { background-color: #ffc107; color: #000; }
