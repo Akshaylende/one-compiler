@@ -1,7 +1,4 @@
 /client/node_modules
 /client/dist
 /client/.parcel-cache
-/client/package-lock.json
 
-/server/node_modules
-/server/package-lock.json
